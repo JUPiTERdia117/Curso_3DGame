@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Fixed_Paddle : MonoBehaviour
+public class Balance_Paddle : MonoBehaviour
 {
     [SerializeField] private float velocidadGiro = 90f; // grados por segundo
     [SerializeField] private float toleranciaRotacion = 0.5f;

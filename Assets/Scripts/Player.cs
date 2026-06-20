@@ -63,7 +63,17 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        inGround = true;
+        
+        
+        if(collision.gameObject.tag == "Deadly")
+        {
+            Debug.Log("auch");
+        }
+        else
+        {
+            
+            inGround = true;
+        }
     }
 
 }

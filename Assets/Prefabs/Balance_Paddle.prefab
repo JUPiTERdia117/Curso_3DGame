@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8542889871497497297}
   - component: {fileID: 8542889871497497296}
   m_Layer: 0
-  m_Name: Fixable_Paddle
+  m_Name: Balance_Paddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
