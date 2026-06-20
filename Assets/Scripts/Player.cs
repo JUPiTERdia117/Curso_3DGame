@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     {
         if (dead)
         {
+            rb.velocity = Vector3.zero;
             return;
         }
         verticalInput = Input.GetAxis("Vertical");
@@ -93,6 +94,8 @@ public class Player : MonoBehaviour
         {
             Debug.Log("auch");
             dead = true;
+            rb.isKinematic = true;
+            rb.velocity = Vector3.zero;
             animator.SetBool("die", true);  
         }
         if(collision.gameObject.tag == "Piso")
