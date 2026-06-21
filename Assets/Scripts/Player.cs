@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     {
         if (dead)
         {
-            rb.velocity = Vector3.zero;
+            
             return;
         }
         verticalInput = Input.GetAxis("Vertical");
@@ -63,6 +63,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (dead)
+        {
+            
+            return;
+        }
+
         float suavizado = 1f - Mathf.Exp(-suavizadoGiro * Time.fixedDeltaTime);
         float giroAplicado = Mathf.Clamp(giroPendiente * suavizado, -maxGiroPorFrameFisico, maxGiroPorFrameFisico);
 
@@ -90,20 +96,38 @@ public class Player : MonoBehaviour
     {
         
         
-        if(collision.gameObject.tag == "Deadly")
-        {
-            Debug.Log("auch");
-            dead = true;
-            rb.isKinematic = true;
-            rb.velocity = Vector3.zero;
-            animator.SetBool("die", true);  
-        }
+      
         if(collision.gameObject.tag == "Piso")
         {
             animator.SetBool("jump", false);   
             animator.SetBool("idle", true);   
             inGround = true;
         }
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        
+        
+        if(collider.gameObject.tag == "Deadly")
+        {
+            Debug.Log("auch");
+            dead = true;
+            //rb.isKinematic = true;
+            //rb.velocity = Vector3.zero;
+            animator.SetBool("die", true);  
+        }
+
+        if(collider.gameObject.tag == "Finish")
+        {
+            Debug.Log("yupiiiii");
+            GameManager gm =  FindObjectOfType<GameManager>();
+            gm.victory = true;
+            rb.isKinematic = true;
+            rb.velocity = Vector3.zero;
+            animator.SetTrigger("victory");  
+        }
+        
     }
 
 }
