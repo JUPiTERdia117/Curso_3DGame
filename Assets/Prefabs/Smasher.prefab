@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4476171145296366786}
   - component: {fileID: 4476171145296366785}
   - component: {fileID: 4476171145296366791}
+  - component: {fileID: 6830583050119064149}
   m_Layer: 0
   m_Name: Props_10a
   m_TagString: Deadly
@@ -118,8 +119,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.987726, y: 1.987726, z: 1.5043352}
-  m_Center: {x: 0.002003789, y: -0.0030056238, z: -0.47427833}
+  m_Size: {x: 1.987726, y: 1.987726, z: 1.07}
+  m_Center: {x: 0.002003789, y: -0.0030056238, z: -0.59}
 --- !u!111 &4476171145296366785
 Animation:
   m_ObjectHideFlags: 0
@@ -148,6 +149,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79858b42e242e45699dbe9384a9f7d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6830583050119064149
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414948875725275068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.987726, y: 1.987726, z: 0.43}
+  m_Center: {x: 0.0020037591, y: -0.003005594, z: 0.18}
 --- !u!1 &8451117405729032551
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +188,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8451117405729032551}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -34.3, y: 16.258484, z: 18.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8346936649136365288}
   - component: {fileID: 1421590933612551131}
   - component: {fileID: 8176433360924168961}
-  - component: {fileID: 4676411614788805085}
+  - component: {fileID: 6419676197935525374}
   m_Layer: 0
   m_Name: Bridge_A
   m_TagString: Piso
@@ -91,29 +91,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!61 &4676411614788805085
-BoxCollider2D:
+--- !u!65 &6419676197935525374
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4411437147790382719}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -2.4994164, y: 1.2732368}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.0011673, y: 2.5464735}
-  m_EdgeRadius: 0
+  m_Size: {x: 5.0011673, y: 2.5464735, z: 5.3999996}
+  m_Center: {x: -2.4994164, y: 1.2732368, z: -2.5}

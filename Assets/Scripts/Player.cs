@@ -52,8 +52,7 @@ public class Player : MonoBehaviour
             if (inGround)
             {
                 animator.SetBool("jump", true);
-                animator.SetBool("idle", false);
-                animator.SetBool("run", false);
+               
 
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 inGround = false;
@@ -69,6 +68,15 @@ public class Player : MonoBehaviour
             return;
         }
 
+        if(rb.velocity.y >= 1)
+        {
+            inGround = false;
+            animator.SetBool("jump", true);
+        }
+
+
+
+
         float suavizado = 1f - Mathf.Exp(-suavizadoGiro * Time.fixedDeltaTime);
         float giroAplicado = Mathf.Clamp(giroPendiente * suavizado, -maxGiroPorFrameFisico, maxGiroPorFrameFisico);
 
@@ -78,14 +86,13 @@ public class Player : MonoBehaviour
 
         if(verticalInput > 0)
         {
-            animator.SetBool("idle", false);
+            
             animator.SetBool("run", true);
             Vector3 movement = transform.forward * verticalInput * speed * Time.fixedDeltaTime;
             rb.MovePosition(rb.position + movement);
         }
         else
         {
-            animator.SetBool("idle", true);
             animator.SetBool("run", false);
         }
         
@@ -100,7 +107,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "Piso")
         {
             animator.SetBool("jump", false);   
-            animator.SetBool("idle", true);   
+            
             inGround = true;
         }
     }
@@ -113,8 +120,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("auch");
             dead = true;
-            //rb.isKinematic = true;
-            //rb.velocity = Vector3.zero;
+            
             animator.SetBool("die", true);  
         }
 

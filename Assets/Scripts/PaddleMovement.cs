@@ -10,6 +10,8 @@ public class PaddleMovement : MonoBehaviour
 
     private Vector3 center;
 
+
+
     void Awake()
     {
         center = transform.position;
@@ -49,21 +51,25 @@ public class PaddleMovement : MonoBehaviour
     //Movimiento base en el eje X, con la función PingPong de Unity para hacer un movimiento oscilante 
     void Movement()
     {
+    
        transform.position = new Vector3(Mathf.PingPong(Time.time*pingPongSpeed, DragDistance.x)+center.x, transform.position.y, transform.position.z);
     }
 
     //Movimiento base en el eje Y, con la función PingPong de Unity para hacer un movimiento oscilante
     void Movement(float DragDistanceY)
     {
+        
        transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time*pingPongSpeed, DragDistanceY)+center.y, transform.position.z);
     }
 
     //Movimiento en ambos ejes, con la función PingPong de Unity para hacer un movimiento oscilante
     void Movement(float DragDistanceX, float DragDistanceY)
     {
+      
        transform.position = new Vector3(Mathf.PingPong(Time.time*pingPongSpeed, DragDistanceX)+center.x, Mathf.PingPong(Time.time*pingPongSpeed, DragDistanceY)+center.y, transform.position.z);
     }
 
+  
     
     /*
     private Vector3 startMarker;
